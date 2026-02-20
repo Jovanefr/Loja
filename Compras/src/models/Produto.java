@@ -1,6 +1,6 @@
 package models;
 
-public class Produto {
+public class Produto implements Comparable<Produto>{
     private String nome;
     private double preco;
     
@@ -23,6 +23,10 @@ public class Produto {
         this.preco = preco;
     }
 
+    @Override
+    public int compareTo(Produto outroProduto){
+        return Double.compare(this.getPreco(), outroProduto.getPreco());
+    }
     
     
 }
